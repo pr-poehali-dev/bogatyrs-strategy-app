@@ -57,20 +57,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				gold: {
-					DEFAULT: '#F5C842',
-					light: '#FFE580',
-					dark: '#C8981A',
+				moss: {
+					DEFAULT: '#4ade80',
+					light: '#86efac',
+					dark: '#16a34a',
 				},
-				ember: {
-					DEFAULT: '#FF4E1A',
-					light: '#FF7A4D',
-					dark: '#C13000',
+				forest: {
+					DEFAULT: '#14532d',
+					light: '#15803d',
+					mid: '#052e16',
 				},
-				midnight: {
-					DEFAULT: '#0D0E1A',
-					light: '#151626',
-					mid: '#1E2035',
+				rune: {
+					DEFAULT: '#86efac',
+					dim: '#34d399',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

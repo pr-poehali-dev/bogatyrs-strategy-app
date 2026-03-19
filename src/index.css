@@ -4,48 +4,49 @@
 
 @layer base {
   :root {
-    --background: 234 30% 8%;
-    --foreground: 45 90% 92%;
+    --background: 150 40% 5%;
+    --foreground: 140 60% 90%;
 
-    --card: 234 25% 12%;
-    --card-foreground: 45 90% 92%;
+    --card: 150 35% 8%;
+    --card-foreground: 140 60% 90%;
 
-    --popover: 234 25% 10%;
-    --popover-foreground: 45 90% 92%;
+    --popover: 150 35% 7%;
+    --popover-foreground: 140 60% 90%;
 
-    --primary: 43 90% 60%;
-    --primary-foreground: 234 30% 8%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 150 40% 5%;
 
-    --secondary: 234 20% 18%;
-    --secondary-foreground: 45 70% 85%;
+    --secondary: 150 25% 12%;
+    --secondary-foreground: 140 40% 75%;
 
-    --muted: 234 20% 16%;
-    --muted-foreground: 234 15% 55%;
+    --muted: 150 25% 10%;
+    --muted-foreground: 150 20% 45%;
 
-    --accent: 18 100% 54%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 160 60% 30%;
+    --accent-foreground: 140 60% 90%;
 
-    --destructive: 0 80% 50%;
+    --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 234 20% 20%;
-    --input: 234 20% 18%;
-    --ring: 43 90% 60%;
+    --border: 150 25% 15%;
+    --input: 150 25% 12%;
+    --ring: 142 70% 45%;
 
     --radius: 0.75rem;
 
-    --gold: #f5c842;
-    --ember: #ff4e1a;
-    --midnight: #0d0e1a;
+    --forest: #14532d;
+    --moss: #4ade80;
+    --rune: #86efac;
+    --midnight: #020d05;
 
-    --sidebar-background: 234 30% 8%;
-    --sidebar-foreground: 45 90% 92%;
-    --sidebar-primary: 43 90% 60%;
-    --sidebar-primary-foreground: 234 30% 8%;
-    --sidebar-accent: 234 20% 18%;
-    --sidebar-accent-foreground: 45 90% 92%;
-    --sidebar-border: 234 20% 20%;
-    --sidebar-ring: 43 90% 60%;
+    --sidebar-background: 150 40% 5%;
+    --sidebar-foreground: 140 60% 90%;
+    --sidebar-primary: 142 70% 45%;
+    --sidebar-primary-foreground: 150 40% 5%;
+    --sidebar-accent: 150 25% 12%;
+    --sidebar-accent-foreground: 140 60% 90%;
+    --sidebar-border: 150 25% 15%;
+    --sidebar-ring: 142 70% 45%;
   }
 }
 
@@ -62,13 +63,13 @@
     @apply bg-background text-foreground font-body;
     background-image:
       radial-gradient(
-        ellipse at 20% 0%,
-        rgba(245, 200, 66, 0.06) 0%,
+        ellipse at 15% 0%,
+        rgba(74, 222, 128, 0.07) 0%,
         transparent 50%
       ),
       radial-gradient(
-        ellipse at 80% 100%,
-        rgba(255, 78, 26, 0.05) 0%,
+        ellipse at 85% 100%,
+        rgba(22, 163, 74, 0.05) 0%,
         transparent 50%
       );
     min-height: 100vh;
@@ -79,24 +80,24 @@
 @layer components {
   .game-card {
     @apply relative bg-card border border-border rounded-xl overflow-hidden transition-all duration-300;
-    background: linear-gradient(145deg, hsl(234 25% 13%), hsl(234 25% 10%));
+    background: linear-gradient(145deg, hsl(150 35% 9%), hsl(150 35% 6%));
   }
 
   .game-card:hover {
-    @apply border-gold/40;
+    border-color: rgba(74, 222, 128, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(245, 200, 66, 0.12);
+    box-shadow: 0 8px 30px rgba(74, 222, 128, 0.08);
   }
 
   .gold-text {
-    background: linear-gradient(135deg, #ffe580, #f5c842, #c8981a);
+    background: linear-gradient(135deg, #86efac, #4ade80, #16a34a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .ember-text {
-    background: linear-gradient(135deg, #ff7a4d, #ff4e1a);
+    background: linear-gradient(135deg, #6ee7b7, #4ade80);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -104,38 +105,41 @@
 
   .btn-gold {
     @apply font-heading font-semibold tracking-wider uppercase;
-    background: linear-gradient(135deg, #f5c842, #c8981a);
-    color: #0d0e1a;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: #dcfce7;
     transition: all 0.2s;
+    border: 1px solid rgba(74, 222, 128, 0.3);
   }
 
   .btn-gold:hover {
-    background: linear-gradient(135deg, #ffe580, #f5c842);
-    box-shadow: 0 0 20px rgba(245, 200, 66, 0.4);
+    background: linear-gradient(135deg, #4ade80, #16a34a);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
     transform: scale(1.02);
+    color: #052e16;
   }
 
   .btn-ember {
     @apply font-heading font-semibold tracking-wider uppercase;
-    background: linear-gradient(135deg, #ff4e1a, #c13000);
-    color: #fff;
+    background: linear-gradient(135deg, #15803d, #14532d);
+    color: #86efac;
+    border: 1px solid rgba(74, 222, 128, 0.25);
     transition: all 0.2s;
   }
 
   .btn-ember:hover {
-    background: linear-gradient(135deg, #ff7a4d, #ff4e1a);
-    box-shadow: 0 0 20px rgba(255, 78, 26, 0.4);
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    box-shadow: 0 0 24px rgba(74, 222, 128, 0.3);
     transform: scale(1.02);
   }
 
   .nav-item {
     @apply flex flex-col items-center gap-0.5 py-2 px-4 rounded-xl transition-all duration-200 cursor-pointer;
-    color: hsl(234 15% 55%);
+    color: hsl(150 20% 40%);
   }
 
   .nav-item.active {
-    color: #f5c842;
-    background: rgba(245, 200, 66, 0.08);
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.08);
   }
 
   .hero-rank-badge {
@@ -144,7 +148,7 @@
 
   .stat-bar {
     @apply h-1.5 rounded-full overflow-hidden;
-    background: hsl(234 20% 18%);
+    background: hsl(150 25% 12%);
   }
 
   .stat-bar-fill {
@@ -152,7 +156,7 @@
   }
 
   .shimmer-gold {
-    background: linear-gradient(90deg, #f5c842 0%, #ffe580 50%, #f5c842 100%);
+    background: linear-gradient(90deg, #4ade80 0%, #86efac 50%, #4ade80 100%);
     background-size: 200% auto;
     @apply animate-shimmer;
   }
@@ -162,13 +166,13 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(245, 200, 66, 0.3),
+      rgba(74, 222, 128, 0.2),
       transparent
     );
   }
 
   .rune-border {
-    border: 1px solid rgba(245, 200, 66, 0.2);
-    box-shadow: inset 0 0 20px rgba(245, 200, 66, 0.03);
+    border: 1px solid rgba(74, 222, 128, 0.15);
+    box-shadow: inset 0 0 20px rgba(74, 222, 128, 0.02);
   }
 }
